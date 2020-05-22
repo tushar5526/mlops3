@@ -2,6 +2,9 @@
 
 ### Tired of tweaking and waiting for your classification models to be perfect, here is how you automate them using ***JENKINS*** + ***DOCKER*** + ***GITHUB***
 
+https://github.com/tushar5526/Github-Jenkins-Docker/blob/master/images/9.png
+
+
 # How to use this project :
 - Put your data for ML model structured as follows :
   - ***faceData***
