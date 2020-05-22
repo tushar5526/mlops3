@@ -30,7 +30,7 @@
 - Run the get_model.py script 
 - ***VIOLA*** its done, now **sit back and wait for the mail, that the best model is trained**
 
-## The setup we wil do below will automatically train different variations of your model and output the best possible model !
+## The setup we wil do below, will automatically train different variations of your model and outputs the best possible model !
 
 # Pre - requisites
 - Basics of Docker
