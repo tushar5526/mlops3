@@ -145,8 +145,6 @@ except:
 with open('result','w') as f:
 	f.write(str(history.history['accuracy'][-1]))
 
-with open('result','rb') as f:
-	print(pickle.load(f))
 """
 
 	
