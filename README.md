@@ -4,6 +4,13 @@
 
 ![Image description](https://github.com/tushar5526/Github-Jenkins-Docker/blob/master/images/9.png)
 
+# SETUP :
+
+- Copy the ***get_model.py*** , ***make_model.py*** and ***modify_model.py*** from this repo 
+- Create a github repo for your project and add ***make_model.py*** , ***modify_model.py*** and ***get_model.py*** to it
+- Now go to your home directory and clone the project using **git clone**
+- We will be using tensorflow with docker, follow the official documentation to set up your docker to run tensorflow https://www.tensorflow.org/install/docker
+
 
 
 # How to use this project :
@@ -31,7 +38,10 @@
       - . . . 
       - classm_n.jpg
 
-- Run the get_model.py script 
+- Put the ***faceData*** in the ***same folder*** where you have cloned the git project !
+
+- Run the get_model.py script
+
 - ***VIOLA*** its done, now **sit back and wait for the mail, that the best model is trained**
 
 ## The setup we wil do below, will automatically train different variations of your model and outputs the best possible model !
@@ -45,13 +55,6 @@
 ```
 echo "jenkins        ALL=(ALL)       NOPASSWD: ALL" >> etc/sudoers
 ```
-
-# SETUP :
-
-- Copy the ***get_model.py*** , ***make_model.py*** and ***modify_model.py*** from this repo 
-- Create a github repo for your project and add **make_model.py*** , ***modify_model.py*** and ***get_model.py*** to it
-- Now go to your home directory and clone the project using **git clone**
-- We will be using tensorflow with docker, follow the official documentation to set up your docker to run tensorflow https://www.tensorflow.org/install/docker
 
 
 **Now let's create our jobs and jenkins**
