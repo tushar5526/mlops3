@@ -141,8 +141,9 @@ try:
 	os.system('touch result')
 except:
 	pass
-with open('result','wb') as f:
-	pickle.dump(history.history['accuracy'][-1],f)
+
+with open('result','w') as f:
+	f.write(str(history.history['accuracy'][-1]))
 
 with open('result','rb') as f:
 	print(pickle.load(f))

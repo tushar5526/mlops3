@@ -95,9 +95,12 @@ def MakeFC():
 
 	modelStructure.update({'DenseLayers' : dlCount})
 
+	print('\n')
+	print('\n')
+
 	for i in modelStructure:
 		print(i,' : ',modelStructure[i])
-		print('\t|')	
+		print('\n\t|\n')	
 	
 	SaveModel()
 
@@ -115,9 +118,12 @@ def FC():
 		modelStructure.update({'DenseLayers' : 3})
 		SaveModel()
 		
+		print('\n')
+		print('\n')
+
 		for i in modelStructure:
 			print(i,' : ',modelStructure[i])
-			print('\t|')
+			print('\n\t|\n')
 
 	elif useDefault == 'n':
 		MakeFC()
@@ -185,3 +191,8 @@ elif tfLearning == '2':
 else:
 	print('Using default Transfer learning')
 	tfLearningFunction()
+
+
+os.system('git add model.data')
+os.system('git push origin master')
+
