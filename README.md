@@ -4,7 +4,7 @@
 
 # How to use this project :
 - Put your data for ML model structured as follows :
-  - ***Data***
+  - ***faceData***
     - class1
       - class1_1.jpg
       - class1_2.jpg 
@@ -102,7 +102,15 @@ echo "jenkins        ALL=(ALL)       NOPASSWD: ALL" >> etc/sudoers
 
 - This is easy, make a new job named ***pull_from_github***
 
-*** IMGE HERE***
+
+![Image description](https://github.com/tushar5526/mlops3/blob/master/img/1.png)
+
+![Image description](https://github.com/tushar5526/mlops3/blob/master/img/2.png)
+
+![Image description](https://github.com/tushar5526/mlops3/blob/master/img/3.png)
+
+![Image description](https://github.com/tushar5526/mlops3/blob/master/img/4.png)
+
 
 
 - [ ] ***JOB 2*** : By looking at the code or program file, Jenkins should automatically start the respective machine learning software installed interpreter install image container to deploy code  and start training( eg. If code uses CNN, then Jenkins should start the container that has already installed all the softwares required for the cnn processing).
@@ -111,23 +119,37 @@ echo "jenkins        ALL=(ALL)       NOPASSWD: ALL" >> etc/sudoers
 
 - Make a new job named ***run_the_container*** and add the following
 
-***Image here***
+![Image description](https://github.com/tushar5526/mlops3/blob/master/img/5.png)
+
+![Image description](https://github.com/tushar5526/mlops3/blob/master/img/6.png)
+
 
 
 - [ ] ***JOB 3*** : Train your model and predict accuracy or metrics.
 
 Here we will train the initial model made by user
 
-***Image here***
+![Image description](https://github.com/tushar5526/mlops3/blob/master/img/7.png)
+
+![Image description](https://github.com/tushar5526/mlops3/blob/master/img/8.png)
+
 
 - [ ] ***JOB 4*** : if metrics accuracy is less than 80%  , then tweak the machine learning model architecture and retrain it
 
 *I am using a python script to manage all this so the complex part is already handled  by it*
 
+![Image description](https://github.com/tushar5526/mlops3/blob/master/img/9.png)
+
+![Image description](https://github.com/tushar5526/mlops3/blob/master/img/10.png)
+
 
 - [ ] ***JOB 5*** : Notify that the best model is being created
 
 *We will mail the user, notifying that the best model is trained, which can be found in ***jenkinsDownload*** folder along with history file
+
+![Image description](https://github.com/tushar5526/mlops3/blob/master/img/14.png)
+
+![Image description](https://github.com/tushar5526/mlops3/blob/master/img/15.png)
 
 
 ***Image here***
@@ -136,7 +158,30 @@ Here we will train the initial model made by user
 
 - **We will check is the container is working or not, if not re-run the JOB 2**
 
+![Image description](https://github.com/tushar5526/mlops3/blob/master/img/16.png)
 
+![Image description](https://github.com/tushar5526/mlops3/blob/master/img/17.png)
+
+
+# Build Pipeline 
+
+- Insatll the build ***delievery pipeline*** from ***Jenkins Plugins Manager***
+
+- In the *Dash Board* Click on ' + ' to **Add a new View**
+
+![Image description](https://github.com/tushar5526/mlops3/blob/master/img/20.png)
+
+Then Follow the images Below
+
+![Image description](https://github.com/tushar5526/mlops3/blob/master/img/21.png)
+
+- Select Initial job as **pull_from_github**
+
+![Image description](https://github.com/tushar5526/mlops3/blob/master/img/22.png)
+
+***FINAL BUILD PIPELINE***
+
+![Image description](https://github.com/tushar5526/mlops3/blob/master/img/b.png)
 
 
 
