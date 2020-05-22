@@ -185,4 +185,29 @@ Then Follow the images Below
 
 
 
+# Sit back and let automation do its work
+
+- [x] 1.  Create container image that has Python3 and Keras or numpy  installed  using dockerfile 
+
+- [x] 2.	Create a job chain of job1, job2, job3, job4 and job5 using build pipeline plugin in Jenkins 
+
+
+- [x] 3.	 Job1 : Pull  the Github repo automatically when some developers push repo to Github.
+
+
+- [x] 4.	 Job2 : By looking at the code or program file, Jenkins should automatically start the respective machine learning software installed interpreter install image container to deploy code  and start training( eg. If code uses CNN, then Jenkins should start the container that has already installed all the softwares required for the cnn processing).
+
+
+- [x] 5.	Job3 : Train your model and predict accuracy or metrics.
+
+
+- [x] 6.	Job4 : if metrics accuracy is less than 80%  , then tweak the machine learning model architecture and retrain it.
+
+
+- [x] 7.	Job5: Notify that the best model is being created
+
+
+- [x] 8.	Create One extra job job6 for monitor : If container where app is running. fails due to any reason then this job should automatically start the container again from where the last trained model left
+
+
 
