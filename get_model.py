@@ -1,4 +1,13 @@
+"""
+
+Making model from sratch and addng conv2d layers  
+featurs will be added later
+
+"""
+
+
 import pickle
+
 import os
 
 modelStructure = {}
@@ -11,6 +20,8 @@ def SaveModel():
 def MakeFC():
 
 	loop = True
+
+
 
 	"""
 	tmp = input('Do you want to add a Conv2D or MaxPool layer (y/n) ')
@@ -193,6 +204,7 @@ else:
 	tfLearningFunction()
 
 
-os.system('git add model.data')
-os.system('git push origin master')
+os.system('git add *')
+os.system("git commit -m 'added model.data'")
+os.system('git push -f origin master')
 
