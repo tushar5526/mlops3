@@ -10,6 +10,11 @@
 - Create a github repo for your project and add ***make_model.py*** , ***modify_model.py*** and ***get_model.py*** to it
 - Now go to your home directory and clone the project using **git clone**
 - We will be using tensorflow with docker, follow the official documentation to set up your docker to run tensorflow https://www.tensorflow.org/install/docker
+- Create a dir named **jenkinsDownload** in your home directory
+```
+(in home directory)
+mkdir jenkinsDownload
+```
 
 
 
