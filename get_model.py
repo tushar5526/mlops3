@@ -206,7 +206,9 @@ else:
 	print('Using default Transfer learning')
 	tfLearningFunction()
 
+#providing the permissions to edit model.data file
 
+os.system('chmod o+wrx model.data')
 #after we had made the model.data we push it back to git along with faceData for the classifier
 os.system('git add *')
 os.system("git commit -m 'added model.data'")
