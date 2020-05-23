@@ -89,7 +89,7 @@ echo "jenkins        ALL=(ALL)       NOPASSWD: ALL" >> etc/sudoers
 
 # TASK 1 : 
 
-- [ ] 1.  Create container image that has Python3 and Keras or numpy  installed  using dockerfile 
+- [x] 1.  Create container image that has Python3 and Keras or numpy  installed  using dockerfile 
 
 - Copy the Dockerfile from tihs repo and paste it into a new dir
 
@@ -105,7 +105,7 @@ echo "jenkins        ALL=(ALL)       NOPASSWD: ALL" >> etc/sudoers
  
 # TASK 2 :  Create a job chain of job1, job2, job3, job4 and job5 using build pipeline plugin in Jenkins 
 
-- [ ] ***JOB 1 : Pull  the Github repo automatically when some developers push repo to Github.***
+- [x] ***JOB 1 : Pull  the Github repo automatically when some developers push repo to Github.***
 
 - This is easy, make a new job named ***pull_from_github***
 
@@ -120,7 +120,7 @@ echo "jenkins        ALL=(ALL)       NOPASSWD: ALL" >> etc/sudoers
 
 
 
-- [ ] ***JOB 2 : By looking at the code or program file, Jenkins should automatically start the respective machine learning software installed interpreter install image container to deploy code  and start training( eg. If code uses CNN, then Jenkins should start the container that has already installed all the softwares required for the cnn processing).***
+- [x] ***JOB 2 : By looking at the code or program file, Jenkins should automatically start the respective machine learning software installed interpreter install image container to deploy code  and start training( eg. If code uses CNN, then Jenkins should start the container that has already installed all the softwares required for the cnn processing).***
 
 ( we are making classification model using Transfer Learning for now, so all we need is to start the ***tf:v5*** we built )
 
@@ -132,7 +132,7 @@ echo "jenkins        ALL=(ALL)       NOPASSWD: ALL" >> etc/sudoers
 
 
 
-- [ ] ***JOB 3 : Train your model and predict accuracy or metrics.***
+- [x] ***JOB 3 : Train your model and predict accuracy or metrics.***
 
 Here we will train the initial model made by user
 
@@ -150,7 +150,7 @@ Here we will train the initial model made by user
 ![Image description](https://github.com/tushar5526/mlops3/blob/master/img/10.png)
 
 
-- [ ] ***JOB 5 : Notify that the best model is being created***
+- [x] ***JOB 5 : Notify that the best model is being created***
 
 *We will mail the user, notifying that the best model is trained, which can be found in ***jenkinsDownload*** folder along with history file
 
@@ -161,7 +161,7 @@ Here we will train the initial model made by user
 
 ***Image here***
 
-- [ ] ***JOB 6 : Create One extra job job6 for monitor : If container where app is running. fails due to any reason then this job should automatically start the container again from where the last trained model left***
+- [x] ***JOB 6 : Create One extra job job6 for monitor : If container where app is running. fails due to any reason then this job should automatically start the container again from where the last trained model left***
 
 - **We will check is the container is working or not, if not re-run the JOB 2**
 
