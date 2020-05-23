@@ -1,20 +1,28 @@
+
+#for loading the model
 import pickle
 
 modelStructure = {}
 code = []
 
-
+#loading the model
 with open('model.data','rb') as f:
 	modelStructure = pickle.load(f)
 
+#printing the model, you can check console in jenkins
 for i in modelStructure:
 	print(i)
 
+#assigning learning rate and epochs from the model.data
 
+#REMEMBER : modle.data stores data as dictionary
 lr = (modelStructure['learningRate'])
 ep = (modelStructure['epochs'])
 
 
+#these string will be joined together to make the final model or ml_model.py file
+#We are using triple quotes to preserve the format in which string is stored
+#you can read about this on google
 importLibs = """
 import pickle
 import os
@@ -26,6 +34,7 @@ from keras.models import Sequential
 from keras.layers import Dense, Dropout, Activation, Flatten, GlobalAveragePooling2D
 """
 
+#lines to add if VGG is selected
 getDataVGG = """
 
 img_rows, img_cols = 224,224
@@ -66,6 +75,7 @@ variables = "lr = " + str(lr) + '\nep = ' + str(ep) + '\nol = train_generator.nu
 
 model = ""
 
+#checking which model is used for transfer learning
 if modelStructure['model'] == 'VGG':
 	model = """
 
@@ -81,7 +91,7 @@ model.save('MobileNet.h5')"""
 
 fineTune = "\n"
 
-
+#checking if fineTuning is set to yes or no, and add respective lines
 if modelStructure['fineTuning'] == 'n':
 	fineTune = """
 
@@ -98,8 +108,11 @@ top_model = Flatten()(top_model)
 
 """
 
+#string that adds layers
 addLayers = ""
 
+
+#total no of layers are stored in denseLayers in model.data
 for i in range(modelStructure['DenseLayers'] - 1):
 	tmp = "\ntop_model = Dense(" + str(modelStructure['DL' + str(i+1)]['Dense']) + ",activation=" + "'" + (modelStructure['DL' + str(i+1)]['activation']) + "'" + ")(top_model)"
 	addLayers += tmp
@@ -109,6 +122,7 @@ tmp = "\ntop_model = Dense(ol,activation='softmax')(top_model)"
 
 addLayers += tmp
 
+#general lines to compile test and train the model
 
 finalModel = """
 
@@ -135,6 +149,7 @@ trainModel = """
 
 """
 
+#here we save our model's accuracy of our model in history
 accuracy="""
 
 try:
@@ -147,7 +162,7 @@ with open('result','w') as f:
 
 """
 
-	
+#create the ml_model.py and add the above all lines
 try:
 	os.system('sudo touch ml_model.py')
 except:
@@ -171,7 +186,7 @@ with open('ml_model.py','w') as f:
 f.close()
 
 
-
+#output the code for checking if everything is working fine, see the logs in jenknins console output for this
 import os 
 os.system('cat ml_model.py')
 
