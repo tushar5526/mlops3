@@ -22,8 +22,8 @@ with open('result','r') as f:
 #save the history of and the best model trained in the folder from docker
 if accuracy > maxAccuracy:
 	maxAccuracy = accuracy
-	os.system('sudo docker cp ml:/tf/Besthistory .')
-	os.system('sudo docker cp ml:/tf/classifierBest.h5 .')
+	os.system('sudo docker cp ml:/tf/history ./Besthistory')
+	os.system('sudo docker cp ml:/tf/classifier.h5 ./bestClassifier.h5')
 
 
 modelStructure = []
