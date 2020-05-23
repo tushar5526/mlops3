@@ -148,7 +148,10 @@ with open('result','w') as f:
 """
 
 	
-
+try:
+	os.system('sudo touch ml_model.py')
+except:
+	pass
 
 with open('ml_model.py','w') as f:
 	f.write(importLibs)
