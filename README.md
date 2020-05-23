@@ -164,6 +164,7 @@ Here we will train the initial model made by user
 - [x] ***JOB 6 : Create One extra job job6 for monitor : If container where app is running. fails due to any reason then this job should automatically start the container again from where the last trained model left***
 
 - **We will check is the container is working or not, if not re-run the JOB 2**
+- **This job will not run until container has stoppped working**
 
 ![Image description](https://github.com/tushar5526/mlops3/blob/master/img/16.png)
 
