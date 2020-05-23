@@ -143,6 +143,12 @@ Here we will train the initial model made by user
 
 ![Image description](https://github.com/tushar5526/mlops3/blob/master/img/7.png)
 
+`NOTE : Add the following lines before python3 ml_model.py in Execute Shell`
+```
+sudo touch ml_model.py
+sudo chmod o+wrx ml_model.py
+```
+
 ![Image description](https://github.com/tushar5526/mlops3/blob/master/img/8.png)
 
 
