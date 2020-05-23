@@ -1,22 +1,22 @@
 """
-
-Making model from sratch and addng conv2d layers  
-featurs will be added later
+This script will be used by the user to tell the structure of classifier model we have to train and modify, then we save the model structure in a file model.data, which will be used later by make_model.py to write the real code for the classifier and 
+then model.data will be modified by modify_model, which will tweak them model structure according to our needs
 
 """
 
-
+#pickle module to load and save model.data
 import pickle
 
 import os
 
 modelStructure = {}
 
- 
+ #save the model
 def SaveModel():
 	with open('model.data','wb') as f:
 		pickle.dump(modelStructure,f)
 
+# Add fully connected layers
 def MakeFC():
 
 	loop = True
@@ -115,6 +115,7 @@ def MakeFC():
 	
 	SaveModel()
 
+
 def FC():
 
 	useDefault = input('\n\tUse default FC HEAD with Flatten -> \n\tDense(512,relu) -> \n\tDense(1024,relu) -> \n\tDense(num_classes,softmax) -> \n\tepochs = 10 -> \n\tLearning Rate = 0.01 \n\n ( y / n ) ')
@@ -139,7 +140,7 @@ def FC():
 	elif useDefault == 'n':
 		MakeFC()
 
-
+#set VGG in model.data
 def SetVGG():
 	fineTuning = input('Do you want to use fine tuning (y/n) for VGG ')
 
@@ -155,6 +156,8 @@ def SetVGG():
 
 	FC()
 
+#set mobile net for transfer learning in model.data
+	
 def SetMobileNet():
 	fineTuning = input('Do you want to use fine tuning (y/n) for MobileNet ')
 
@@ -188,7 +191,7 @@ def FromScratch():
 
 
 
-
+#Ask whether you want transfer learning or create a model from scratch (which is not yet supported) and then save it in model.data, model.data holds the data using a dictionary
 print('Welcome Message ')
 
 tfLearning = input('Do you want Transfer Learning (1) or Make model from scratch (2) ')
@@ -204,6 +207,7 @@ else:
 	tfLearningFunction()
 
 
+#after we had made the model.data we push it back to git along with faceData for the classifier
 os.system('git add *')
 os.system("git commit -m 'added model.data'")
 os.system('git push -f origin master')
