@@ -154,7 +154,7 @@ Here we will train the initial model made by user
 
 *We will mail the user, notifying that the best model is trained, which can be found in ***jenkinsDownload*** folder along with history file*
 
-**!!!! Make sure the gmail ID allows secure apps to connect,(go to this link from the mail ID you are using to send the email https://myaccount.google.com/lesssecureapps or you can use the SMTP protocol**
+**!!!! Make sure the gmail ID allows secure apps to connect, (go to this link from the mail ID you are using to send the email https://myaccount.google.com/lesssecureapps) or you can use the SMTP protocol**
 
 ( Better feature, upload the model on a google drive and send the link in the mail too , but we will get back to it in future )
 
