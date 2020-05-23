@@ -187,7 +187,8 @@ f.close()
 
 
 #output the code for checking if everything is working fine, see the logs in jenknins console output for this
-import os 
+import os
+os.system('sudo chmod o+wrx model.data') 
 os.system('cat ml_model.py')
 
 
